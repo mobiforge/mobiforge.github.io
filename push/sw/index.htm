@@ -30,7 +30,32 @@ function requestPushPermission() {
         //   'sure why. Check the console to see the error.');
       });
   });
+
+
 }
+
+
+
+function checkSubscription() {
+  navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+    serviceWorkerRegistration.pushManager.getSubscription().then(
+      function(pushSubscription) {
+        console.log(pushSubscription);
+        // Check we have everything we need to unsubscribe
+        // if (!pushSubscription || !pushSubscription.unsubscribe) {
+        //   return;
+        }
+        
+        pushSubscription.unsubscribe();
+
+        changeState(STATE_NOTIFICATION_PERMISSION);
+      }.bind(this)).catch(function(e) {
+        console.error('Error thrown while checking push notifications. ' +
+          'Most likely because push was never registered', e);
+      });
+  });
+}
+
 
 
 
