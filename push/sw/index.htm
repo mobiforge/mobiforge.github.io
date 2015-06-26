@@ -16,6 +16,7 @@ else {
 
 
 function requestPushPermission() {
+  console.log('requestung push permisssion...');
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     serviceWorkerRegistration.pushManager.subscribe()
       .then(function(pushSubscription) {
