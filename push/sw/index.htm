@@ -12,5 +12,28 @@ if ('serviceWorker' in navigator) {
 else {
   console.log("ServiceWorker not supported :-(");
 }
-</script>
+
+
+
+//function requestPushPermission() {
+  navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+    serviceWorkerRegistration.pushManager.subscribe()
+      .then(function(pushSubscription) {
+        //sendSubscription(pushSubscription);
+        console.log(pushSubscription);
+      })
+      .catch(function(e) {
+        console.error('Unable to register for push', e);
+        // showError('Ooops Push Couldn\'t Register', 'When we tried to ' +
+        //   'get the registration ID for GCM, something went wrong, not ' +
+        //   'sure why. Check the console to see the error.');
+      });
+  });
+//}
+
+
+
+</script> 
+
+
 </html>
