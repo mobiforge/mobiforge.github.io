@@ -44,11 +44,7 @@ function checkSubscription() {
         // Check we have everything we need to unsubscribe
         // if (!pushSubscription || !pushSubscription.unsubscribe) {
         //   return;
-        }
         
-        pushSubscription.unsubscribe();
-
-        changeState(STATE_NOTIFICATION_PERMISSION);
       }.bind(this)).catch(function(e) {
         console.error('Error thrown while checking push notifications. ' +
           'Most likely because push was never registered', e);
