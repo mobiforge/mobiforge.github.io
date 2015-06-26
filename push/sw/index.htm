@@ -15,7 +15,7 @@ else {
 
 
 
-//function requestPushPermission() {
+function requestPushPermission() {
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     serviceWorkerRegistration.pushManager.subscribe()
       .then(function(pushSubscription) {
@@ -29,11 +29,13 @@ else {
         //   'sure why. Check the console to see the error.');
       });
   });
-//}
+}
 
 
 
 </script> 
-
+<body onload="requestPushPermission()">
+Push test page
+</body>
 
 </html>
