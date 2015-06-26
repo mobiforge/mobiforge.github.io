@@ -1,7 +1,7 @@
 {  
   "name": "mobiForge Push",  
   "short_name": "mobiForge push",  
-  "start_url": "/push",  
+  "start_url": "/push/sw/",  
   "display": "standalone",  
   "gcm_sender_id": "213835343198",  
   "gcm_user_visible_only": true  
