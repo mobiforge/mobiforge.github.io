@@ -41,6 +41,7 @@ function checkSubscription() {
     serviceWorkerRegistration.pushManager.getSubscription().then(
       function(pushSubscription) {
         console.log(pushSubscription);
+        sendSubscription(pushSubscription);
         // Check we have everything we need to unsubscribe
         // if (!pushSubscription || !pushSubscription.unsubscribe) {
         //   return;
@@ -55,7 +56,7 @@ function checkSubscription() {
 
 function sendSubscription(pushSubscription) {
   //uses jquery
-    var url = 'http://mobiforge.com/m/subscribe.php`';
+    var url = 'http://mobiforge.com/m/subscribe.php';
     $.ajax({
        type: 'GET',
         url: url,
@@ -64,6 +65,9 @@ function sendSubscription(pushSubscription) {
         dataType: 'jsonp',
     success: function(json) {
        console.log(SUBRESP.DATA);
+    },
+    error: function(e) {
+      console.error(e.message);
     }
     });
 
