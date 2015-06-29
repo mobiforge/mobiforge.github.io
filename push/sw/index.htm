@@ -55,6 +55,7 @@ function checkSubscription() {
 
 
 function sendSubscription(pushSubscription) {
+  console.log('sending...');
   //uses jquery
     var url = 'http://mobiforge.com/m/subscribe.json';
 $.ajax({
@@ -65,7 +66,7 @@ $.ajax({
     contentType: "application/json",
     dataType: 'jsonp',
     success: function(json) {
-       console.log(json);
+       console.log('result: ' + json);
     },
     error: function(e) {
        console.log(e.message);
