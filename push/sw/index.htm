@@ -57,18 +57,20 @@ function checkSubscription() {
 function sendSubscription(pushSubscription) {
   //uses jquery
     var url = 'http://mobiforge.com/m/subscribe.php';
-    $.ajax({
-       type: 'GET',
-        url: url,
-        async: false,
-        contentType: "application/json",
-        dataType: 'jsonp',
+$.ajax({
+   type: 'GET',
+    url: url,
+    async: false,
+    jsonpCallback: 'subCallback',
+    contentType: "application/json",
+    dataType: 'jsonp',
     success: function(json) {
-       console.log(SUBRESP.DATA);
+       console.log(json);
     },
     error: function(e) {
-      console.error(e.message);
+       console.log(e.message);
     }
+});
     });
 
 }
