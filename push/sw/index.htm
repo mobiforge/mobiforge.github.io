@@ -24,7 +24,7 @@ function requestPushPermission() {
     serviceWorkerRegistration.pushManager.subscribe()
       .then(function(pushSubscription) {
         console.log(pushSubscription);
-        sendSubscription(pushSubscription);
+        //sendSubscription(pushSubscription);
       })
       .catch(function(e) {
         console.error('Unable to register for push', e);
