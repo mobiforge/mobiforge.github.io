@@ -57,10 +57,10 @@ function checkSubscription() {
 function sendSubscription(pushSubscription) {
   console.log('sending...');
   //uses jquery
-    var url = 'http://mobiforge.com/m/subscribe.json';
+    var url = 'http://mobiforge.com/m/subscribe.php';
 $.ajax({
     url: url,
-    jsonp: 'subCallback',
+    jsonp: 'callback',
     data: {id:"dummy"},
     success: function(json) {
        console.log('result: ' + json);
