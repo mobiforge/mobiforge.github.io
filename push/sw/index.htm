@@ -59,12 +59,9 @@ function sendSubscription(pushSubscription) {
   //uses jquery
     var url = 'http://mobiforge.com/m/subscribe.json';
 $.ajax({
-   type: 'GET',
     url: url,
-    async: false,
-    jsonpCallback: 'subCallback',
-    contentType: "application/json",
-    dataType: 'jsonp',
+    jsonp: 'subCallback',
+    data: {id:"dummy"},
     success: function(json) {
        console.log('result: ' + json);
     },
