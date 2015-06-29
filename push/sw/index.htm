@@ -23,8 +23,8 @@ function requestPushPermission() {
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     serviceWorkerRegistration.pushManager.subscribe()
       .then(function(pushSubscription) {
-        //sendSubscription(pushSubscription);
         console.log(pushSubscription);
+        sendSubscription(pushSubscription);
       })
       .catch(function(e) {
         console.error('Unable to register for push', e);
