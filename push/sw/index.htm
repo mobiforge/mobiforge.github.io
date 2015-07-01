@@ -93,16 +93,16 @@ function sendSubscription(pushSubscription) {
 }
 
 
-function showNotification(result) {
+function showNotification(data) {
   console.log('setting up notification');
     if(Notification.permission=='granted') {
-          var notification = new Notification('New content', {  
-            body: 'Web Push Notifications',
+          var notification = new Notification(data.title, {  
+            body: data.body,
             icon: 'favicon.ico' 
         }); 
 
      notification.onclick = function() {console.log('click');
-    window.open('http://mobiforge.com', '_blank');
+    window.open(data.url, '_blank');
       //win.focus();
         } 
 
@@ -110,12 +110,12 @@ function showNotification(result) {
     else {
       Notification.requestPermission(function(permission) {
       if(permission=='granted') {
-        var notification = new Notification('New content', {  
-            body: 'Web Push Notifications',
+        var notification = new Notification(data.title, {  
+            body: data.body,
             icon: 'favicon.ico' 
         });  
         notification.onclick = function() {console.log('click');
-    var win = window.open('http://mobiforge.com', '_blank');
+    var win = window.open(data.url, '_blank');
       win.focus();
         } 
       }          
