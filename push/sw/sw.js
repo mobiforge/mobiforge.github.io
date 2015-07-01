@@ -71,7 +71,7 @@ function showNotification(notificationData) {
     self.addEventListener('notificationclick', function(e) {
       console.log('Notification click yo.');
       window.open(notificationData.data.url, '_blank');
-    }
+    });
 }
 
 
