@@ -24,7 +24,8 @@ function fetchNotDataJSONP() {
 
 
 function fetchNotData() {
-  fetch("http://mobiforge.com/m/latest.php", {mode:"cors"}).then(function(res) {
+  // fetch("http://mobiforge.com/m/latest.php", {mode:"cors"}).then(function(res) {
+  fetch("http://mobiforge.com/m/latest.json").then(function(res) {
     res.json().then(function(data) {
           // Show notification
       console.log(data);
