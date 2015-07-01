@@ -43,28 +43,27 @@ function showNotification(notificationData) {
   console.log('setting up notification');
     if(Notification.permission=='granted') {
           // var notification = new Notification(notificationData.data.title, {  
-         var notification = new Notification('temp', {  
-            body: 'body',
-            icon: 'favicon.ico',
-            tag: 'blah' 
+         self.registration.showNotification(notificationData.data.title, {  
+            body: notificationData.data.body,
+            icon: 'favicon.ico' 
         }); 
 
-     notification.onclick = function() {console.log('click');
-    window.open(notificationData.data.url, '_blank');
-      //win.focus();
-        } 
+    //  notification.onclick = function() {console.log('click');
+    // window.open(notificationData.data.url, '_blank');
+    //   //win.focus();
+    //     } 
 
     }
     else {
       Notification.requestPermission(function(permission) {
       if(permission=='granted') {
-        var notification = new Notification(notificationData.data.title, {  
+        self.registration.showNotification(notificationData.data.title, {  
             body: notificationData.data.body,
             icon: 'favicon.ico' 
         });  
-        notification.onclick = function() {console.log('click');
-    var win = window.open(notificationData.data.url, '_blank');
-      win.focus();
+    //     notification.onclick = function() {console.log('click');
+    // var win = window.open(notificationData.data.url, '_blank');
+    //   win.focus();
         } 
       }          
     });
