@@ -23,14 +23,11 @@ function requestPushPermission() {
   navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
     serviceWorkerRegistration.pushManager.subscribe()
       .then(function(pushSubscription) {
-        //sendSubscription(pushSubscription);
         console.log(pushSubscription);
+        sendSubscription(pushSubscription);
       })
       .catch(function(e) {
         console.error('Unable to register for push', e);
-        // showError('Ooops Push Couldn\'t Register', 'When we tried to ' +
-        //   'get the registration ID for GCM, something went wrong, not ' +
-        //   'sure why. Check the console to see the error.');
       });
   });
 
@@ -44,6 +41,7 @@ function checkSubscription() {
     serviceWorkerRegistration.pushManager.getSubscription().then(
       function(pushSubscription) {
         console.log(pushSubscription);
+        sendSubscription(pushSubscription);
         // Check we have everything we need to unsubscribe
         // if (!pushSubscription || !pushSubscription.unsubscribe) {
         //   return;
@@ -70,7 +68,17 @@ console.log(data);
 }
 
 
+function sendSubscription(pushSubscription) {
+  console.log('sending...');
+  //uses jquery
+   // var url = 'http://mobiforge.com/m/subscribe.php';
+$.getJSON("http://mobiforge.com/m/subscribe.php?callback=?", function(result){
+   //response data are now in the result variable
+   console.log(result);
+});
+   
 
+}
 
 </script> 
 <body>
@@ -79,6 +87,9 @@ Push test page<br />
 <button onclick="checkSubscription()">Check sub</button>
 <button onclick="fetchNotData()">Fetch</button>
 <br />
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 </body>
 
