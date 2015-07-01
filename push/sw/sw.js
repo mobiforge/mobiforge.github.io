@@ -64,7 +64,7 @@ function showNotification(notificationData) {
     //     notification.onclick = function() {console.log('click');
     // var win = window.open(notificationData.data.url, '_blank');
     //   win.focus();
-        } 
+        // } 
       }          
     });
     }
