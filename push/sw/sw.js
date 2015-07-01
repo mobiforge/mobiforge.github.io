@@ -1,5 +1,5 @@
 //sw.js
-importScripts("jquery.min.js");
+importScripts("/push/sw/jquery.min.js");
 
 
 self.addEventListener('push', function(e) {
