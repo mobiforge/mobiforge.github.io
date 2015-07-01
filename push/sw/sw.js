@@ -1,12 +1,13 @@
 //sw.js
-importScripts("/push/sw/jquery.min.js");
+//importScripts("/push/sw/jquery.min.js");
 
 
 self.addEventListener('push', function(e) {
   console.log('push received');
 
   //Get the notification data, then display notification
-  fetchNotDataJSONP();
+  // fetchNotDataJSONP();
+  fetchNotData();
 });
 
 
@@ -19,6 +20,22 @@ function fetchNotDataJSONP() {
     console.log(result);
     showNotification(result);
   });
+}
+
+
+function fetchNotData() {
+  fetch("http://mobiforge.com/m/latest.php").then(function(res) {
+    res.json().then(function(data) {
+          // Show notification
+      console.log(data);
+          //self.registration.showNotification(data.title, {
+          //body: data.body,
+          //icon: data.icon,
+          //tag: data.tag
+        //})
+    showNotification(result);
+    })
+  })
 }
 
 function showNotification(notificationData) {
