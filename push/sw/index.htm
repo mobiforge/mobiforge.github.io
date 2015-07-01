@@ -93,11 +93,11 @@ function sendSubscription(pushSubscription) {
 }
 
 
-function showNotification(data) {
+function showNotification(notificationData) {
   console.log('setting up notification');
     if(Notification.permission=='granted') {
-          var notification = new Notification(data.title, {  
-            body: data.body,
+          var notification = new Notification(notificationData.data.title, {  
+            body: notificationData.data.body,
             icon: 'favicon.ico' 
         }); 
 
@@ -110,12 +110,12 @@ function showNotification(data) {
     else {
       Notification.requestPermission(function(permission) {
       if(permission=='granted') {
-        var notification = new Notification(data.title, {  
-            body: data.body,
+        var notification = new Notification(notificationData.data.title, {  
+            body: notificationData.data.body,
             icon: 'favicon.ico' 
         });  
         notification.onclick = function() {console.log('click');
-    var win = window.open(data.url, '_blank');
+    var win = window.open(notificationData.data.url, '_blank');
       win.focus();
         } 
       }          
