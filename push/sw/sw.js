@@ -42,9 +42,11 @@ function fetchNotData() {
 function showNotification(notificationData) {
   console.log('setting up notification');
     if(Notification.permission=='granted') {
-          var notification = new Notification(notificationData.data.title, {  
-            body: notificationData.data.body,
-            icon: 'favicon.ico' 
+          // var notification = new Notification(notificationData.data.title, {  
+         var notification = new Notification('temp', {  
+            body: 'body',
+            icon: 'favicon.ico',
+            tag: 'blah' 
         }); 
 
      notification.onclick = function() {console.log('click');
