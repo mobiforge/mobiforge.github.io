@@ -57,14 +57,14 @@ function fetchNotData() {
   fetch("http://mobiforge.com/m/latest.json").then(function(res) {
     res.json().then(function(data) {
           // Show notification
-console.log(data);
+      console.log(data);
           //self.registration.showNotification(data.title, {
           //body: data.body,
           //icon: data.icon,
           //tag: data.tag
         //})
     })
-})
+  })
 }
 
 
@@ -73,8 +73,9 @@ function fetchNotDataJSONP() {
   //uses jquery
    // var url = 'http://mobiforge.com/m/subscribe.php';
   $.getJSON("http://mobiforge.com/m/latest.php?callback=?", function(result){
-   //response data are now in the result variable
-   console.log(result);
+    //response data are now in the result variable
+    console.log(result);
+    showNotification(result);
   });
 }
 
@@ -83,13 +84,22 @@ function sendSubscription(pushSubscription) {
   console.log('sending...');
   //uses jquery
    // var url = 'http://mobiforge.com/m/subscribe.php';
-$.getJSON("http://mobiforge.com/m/subscribe.php?callback=?", function(result){
+  $.getJSON("http://mobiforge.com/m/subscribe.php?callback=?", function(result){
    //response data are now in the result variable
-   console.log(result);
-});
+    console.log(result);
+  });
    
 
 }
+
+
+function showNotification(result) {
+      var notification = new Notification('New content', {  
+        body: 'Web Push Notifications',
+        icon: 'favicon.ico' 
+    });  
+}
+
 
 </script> 
 <body>
