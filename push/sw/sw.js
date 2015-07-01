@@ -4,7 +4,7 @@ self.addEventListener('push', function(e) {
 
   //Get the notification data, then display notification
   fetchNotDataJSONP();
-}
+});
 
 
 function fetchNotDataJSONP() {
