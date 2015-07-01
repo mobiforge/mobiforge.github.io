@@ -1,4 +1,7 @@
 //sw.js
+importScripts("https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js");
+
+
 self.addEventListener('push', function(e) {
   console.log('push received');
 
