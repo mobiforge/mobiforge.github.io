@@ -55,6 +55,20 @@ function checkSubscription() {
   });
 }
 
+function fetchNotData() {
+  fetch("http://mobiforge.com/m/latest.json").then(function(res) {
+    res.json().then(function(data) {
+          // Show notification
+console.log(data);
+          //self.registration.showNotification(data.title, {
+          //body: data.body,
+          //icon: data.icon,
+          //tag: data.tag
+        //})
+    })
+})
+}
+
 
 
 
@@ -63,6 +77,7 @@ function checkSubscription() {
 Push test page<br />
 <button onclick="requestPushPermission()">request push permission</button>
 <button onclick="checkSubscription()">Check sub</button>
+<button onclick="fetchNotData()">Fetch</button>
 <br />
 
 </body>
