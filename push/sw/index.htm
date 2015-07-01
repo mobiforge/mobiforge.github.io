@@ -95,10 +95,32 @@ function sendSubscription(pushSubscription) {
 
 function showNotification(result) {
   console.log('setting up notification');
-      var notification = new Notification('New content', {  
-        body: 'Web Push Notifications',
-        icon: 'favicon.ico' 
-    });  
+    if(Notification.permission=='granted') {
+          var notification = new Notification('New content', {  
+            body: 'Web Push Notifications',
+            icon: 'favicon.ico' 
+        }); 
+
+     notification.onclick = function() {console.log('click');
+    window.open('http://mobiforge.com', '_blank');
+      //win.focus();
+        } 
+
+    }
+    else {
+      Notification.requestPermission(function(permission) {
+      if(permission=='granted') {
+        var notification = new Notification('New content', {  
+            body: 'Web Push Notifications',
+            icon: 'favicon.ico' 
+        });  
+        notification.onclick = function() {console.log('click');
+    var win = window.open('http://mobiforge.com', '_blank');
+      win.focus();
+        } 
+      }          
+    });
+    }
 }
 
 
