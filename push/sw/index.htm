@@ -68,6 +68,16 @@ console.log(data);
 }
 
 
+function fetchNotDataJSONP() {
+  console.log('fecthing JSONP...');
+  //uses jquery
+   // var url = 'http://mobiforge.com/m/subscribe.php';
+  $.getJSON("http://mobiforge.com/m/latest.php?callback=?", function(result){
+   //response data are now in the result variable
+   console.log(result);
+}
+
+
 function sendSubscription(pushSubscription) {
   console.log('sending...');
   //uses jquery
@@ -86,6 +96,7 @@ Push test page<br />
 <button onclick="requestPushPermission()">request push permission</button>
 <button onclick="checkSubscription()">Check sub</button>
 <button onclick="fetchNotData()">Fetch</button>
+<button onclick="fetchNotDataJSONP()">FetchJSONP</button>
 <br />
 
 
