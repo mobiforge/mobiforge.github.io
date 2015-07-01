@@ -34,7 +34,7 @@ function fetchNotData() {
           //icon: data.icon,
           //tag: data.tag
         //})
-    showNotification(result);
+    showNotification(data);
     })
   })
 }
