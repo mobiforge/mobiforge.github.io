@@ -1,6 +1,6 @@
 importScripts('/lib/node_modules/sw-toolbox/sw-toolbox.js');
 
-toolbox.precache(['pwa.html'],['mf-logo.svg'],['manifest.json']);
+toolbox.precache(['pwa.html','mf-logo.svg','manifest.json']);
 
 toolbox.router.default = toolbox.cacheFirst;
 
