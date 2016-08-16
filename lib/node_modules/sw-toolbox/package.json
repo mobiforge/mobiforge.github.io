@@ -1,0 +1,57 @@
+{
+  "name": "sw-toolbox",
+  "version": "3.2.1",
+  "license": "Apache-2.0",
+  "scripts": {
+    "publish-release": "./node_modules/sw-testing-helpers/project/publish-release.sh",
+    "build": "gulp default",
+    "build-docs": "jsdoc -c jsdoc.json && cp ./build/sw-toolbox.js ./docs/",
+    "test": "gulp lint && gulp test:automated",
+    "bundle": "./project/create-release-bundle.sh"
+  },
+  "main": "lib/sw-toolbox.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GoogleChrome/sw-toolbox"
+  },
+  "dependencies": {
+    "serviceworker-cache-polyfill": "^4.0.0",
+    "path-to-regexp": "^1.0.1"
+  },
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "browserify-header": "^0.9.2",
+    "chai": "^3.4.1",
+    "chromedriver": "^2.20.0",
+    "cookie-parser": "^1.4.1",
+    "eslint": "^1.10.3",
+    "eslint-config-google": "^0.3.0",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-mocha": "^2.2.0",
+    "jsdoc": "^3.4.0",
+    "jshint-stylish": "^2.1.0",
+    "minifyify": "^7.1.0",
+    "mocha": "^2.3.4",
+    "qunitjs": "^1.20.0",
+    "selenium-webdriver": "^2.48.2",
+    "sw-testing-helpers": "0.0.14",
+    "temp": "^0.8.3",
+    "vinyl-source-stream": "^1.1.0",
+    "which": "^1.2.4"
+  },
+  "readme": "# Service Worker Toolbox\n\n[![Build Status](https://travis-ci.org/GoogleChrome/sw-toolbox.svg?branch=master)](https://travis-ci.org/GoogleChrome/sw-toolbox) [![Dependency Status](https://david-dm.org/googlechrome/sw-toolbox.svg)](https://david-dm.org/googlechrome/sw-toolbox) [![devDependency Status](https://david-dm.org/googlechrome/sw-toolbox/dev-status.svg)](https://david-dm.org/googlechrome/sw-toolbox#info=devDependencies)\n\n> A collection of tools for [service workers](https://slightlyoff.github.io/ServiceWorker/spec/service_worker/)\n\nService Worker Toolbox provides some simple helpers for use in creating your own service workers. Specifically, it provides common caching patterns and an [expressive approach](https://googlechrome.github.io/sw-toolbox/docs/master/tutorial-api#expressive-approach) to using those strategies for runtime requests. If you're not sure what service workers are or what they are for, start with [the explainer doc](https://github.com/slightlyoff/ServiceWorker/blob/master/explainer.md).\n\n## Install\n\nService Worker Toolbox is available through Bower, npm or direct from GitHub:\n\n`bower install --save sw-toolbox`\n\n`npm install --save sw-toolbox`\n\n`git clone https://github.com/GoogleChrome/sw-toolbox.git`\n\n### Register your service worker\n\nFrom your registering page, register your service worker in the normal way. For example:\n\n```javascript\nnavigator.serviceWorker.register('my-service-worker.js');\n```\nAs implemented in Chrome 40 or later, a service worker must exist at the root of the scope that you intend it to control, or higher. So if you want all of the pages under `/myapp/` to be controlled by the worker, the worker script itself must be served from either `/` or `/myapp/`. The default scope is the containing path of the service worker script.\n\nFor even lower friction you can instead include the Service Worker Toolbox companion script in your HTML as shown below. Be aware that this is not customizable. If you need to do anything fancier than registering with a default scope, you'll need to use the standard registration.\n\n```html\n<script src=\"/path/to/sw-toolbox/companion.js\" data-service-worker=\"my-service-worker.js\"></script>\n```\n\n### Add Service Worker Toolbox to your service worker script\n\nIn your service worker you just need to use `importScripts` to load Service Worker Toolbox\n\n```javascript\nimportScripts('bower_components/sw-toolbox/sw-toolbox.js'); // Update path to match your own setup\n```\n\n### Use the toolbox\n\nTo understand how to use the toolbox read the [usage](https://googlechrome.github.io/sw-toolbox/docs/master/tutorial-usage) and [api](https://googlechrome.github.io/sw-toolbox/docs/master/tutorial-api) documentation.\n\n## Support\n\nIf you’ve found an error in this library, please file an issue at: https://github.com/GoogleChrome/sw-toolbox/issues.\n\nPatches are encouraged, and may be submitted by forking this project and submitting a pull request through GitHub.\n\n## License\n\nCopyright 2015 Google, Inc.\n\nLicensed under the [Apache License, Version 2.0](LICENSE) (the \"License\");\nyou may not use this file except in compliance with the License. You may\nobtain a copy of the License at\n\n   http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "readmeFilename": "README.md",
+  "description": "[![Build Status](https://travis-ci.org/GoogleChrome/sw-toolbox.svg?branch=master)](https://travis-ci.org/GoogleChrome/sw-toolbox) [![Dependency Status](https://david-dm.org/googlechrome/sw-toolbox.svg)](https://david-dm.org/googlechrome/sw-toolbox) [![devDependency Status](https://david-dm.org/googlechrome/sw-toolbox/dev-status.svg)](https://david-dm.org/googlechrome/sw-toolbox#info=devDependencies)",
+  "bugs": {
+    "url": "https://github.com/GoogleChrome/sw-toolbox/issues"
+  },
+  "_id": "sw-toolbox@3.2.1",
+  "dist": {
+    "shasum": "d7281e7dfae361003b327c8f91c82438dc553a40"
+  },
+  "_from": "sw-toolbox@",
+  "_resolved": "https://registry.npmjs.org/sw-toolbox/-/sw-toolbox-3.2.1.tgz"
+}
