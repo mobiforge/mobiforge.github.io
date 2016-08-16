@@ -1,1 +1,1 @@
-importScripts('/lib/sw-toolbox.js');
+importScripts('/lib/sw-toolbox/sw-toolbox.js');

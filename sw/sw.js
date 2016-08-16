@@ -1,3 +1,4 @@
-self.addEventListener('online', function(event) {
-  console.log('online');
-});
+self.addEventListener("install", function(event) {
+  console.log('SW: Installing service worker');
+}
+
