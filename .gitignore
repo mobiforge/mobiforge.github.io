@@ -1,5 +1,5 @@
-lib/*
-lib/*/*
+lib/sw-toolbox
+lib/sw-toolbox/*
 
 # Compiled source #
 ###################
