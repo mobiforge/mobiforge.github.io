@@ -2,14 +2,121 @@
 <html>
   <head>
   <title>PWA html page </title>
-    <meta charset="utf-8">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript">
+    var swsource = "https://mobiforge.github.io/sw.js";
+    if("serviceWorker" in navigator) {
+      navigator.serviceWorker.register(swsource).then(function(reg){
+        console.log('ServiceWorker scope: ', reg.scope);
+      }).catch(function(err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    };
+  </script>
   </head>
   <body>
     <nav class="fixed-nav">
       <img src="mf-logo.svg" height="30" />
-    </nav> 
-    <h1>amp-install-serviceworker demo: The progressive web app page</h1>
+    <ul> 
+      <li><a href="#">Item 1</a></li>
+      <li><a href="#">Item 2</a></li>
+      <li><a href="#">Item 3</a></li>
+      <li><a href="#">Item 4</a></li>
+    </ul>
+
+    </nav>
+    <main>
+      <h1>AMP ⚡ PWA</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean rutrum dapibus erat eget sodales. Quisque at maximus tellus. Duis tristique mi magna, ut efficitur lectus porttitor non. Ut bibendum diam turpis, eget vehicula urna dignissim in. Vestibulum eget massa neque. Nulla facilisi. Pellentesque faucibus rutrum eros ut vestibulum. Proin ut nisl malesuada eros auctor viverra non et nibh. Phasellus a felis molestie, fermentum nunc ut, tincidunt felis. Nam quis fermentum velit. Fusce condimentum vehicula porttitor. Aliquam sagittis faucibus urna ac lacinia. Praesent id porta dolor. Donec a pulvinar dui, quis malesuada risus. Cras semper venenatis augue.</p>
+
+      <p>Nam molestie eget nulla sit amet hendrerit. Morbi vulputate commodo est, in elementum turpis luctus at. Integer velit urna, tincidunt in aliquam eget, pulvinar in odio. In pharetra sapien mauris, ac sagittis leo venenatis eget. Integer laoreet turpis ac sollicitudin placerat. Curabitur non aliquet massa. Morbi non volutpat enim. Etiam non placerat arcu. In non tellus tempus, consectetur leo ultrices, tincidunt eros. Cras euismod volutpat erat, eget rutrum orci vestibulum sit amet. Mauris eu dui purus. Aliquam condimentum varius nibh, eget consequat nibh commodo non. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec vestibulum risus purus, a accumsan massa semper sed. Fusce sit amet est suscipit, consectetur ex sit amet, congue sem.</p>
+
+      <p>Etiam blandit magna felis, ac iaculis purus auctor eget. Morbi eleifend, mi a fringilla cursus, dolor erat placerat magna, consectetur imperdiet turpis felis in ante. In ut velit ut eros venenatis consectetur in sed justo. Phasellus posuere, nulla sit amet iaculis cursus, enim mi tincidunt tellus, id auctor eros velit id massa. Suspendisse rutrum vel magna at gravida. Nulla commodo hendrerit lorem, sit amet volutpat massa tristique nec. In accumsan diam ac risus luctus varius. Etiam aliquet, quam eu efficitur eleifend, mi lacus tincidunt neque, at egestas lacus felis quis purus. Aenean lobortis nisi a finibus eleifend. Suspendisse euismod, sapien at viverra aliquam, mauris tortor blandit tortor, fringilla tempor eros urna vitae ligula. Aliquam erat volutpat.</p>
+
+      <p>Donec vulputate ex ut risus ullamcorper molestie. Proin interdum, augue ut gravida placerat, quam ipsum maximus neque, pretium semper tellus eros vitae leo. Donec eu eleifend metus. In et urna lacinia urna vulputate faucibus ullamcorper vel erat. Duis vehicula aliquet libero, non convallis erat hendrerit et. Proin ornare pretium pulvinar. Suspendisse potenti. Vestibulum varius magna id lectus finibus mattis. Quisque nulla eros, elementum a dictum quis, tempor et libero. Aenean sollicitudin tellus elit, at lobortis ex tempor ut. Maecenas ac tincidunt enim, vitae tempor nibh. Maecenas malesuada egestas orci, facilisis malesuada metus bibendum a. Aliquam erat volutpat.</p>
+
+      <p>Fusce tempor eu quam non rutrum. Donec at nibh erat. Integer congue nisl a aliquet porttitor. Aliquam luctus rutrum metus vitae iaculis. Maecenas rhoncus feugiat massa vel commodo. Aliquam dignissim consectetur lacinia. Quisque finibus nibh nec est lobortis hendrerit. Vivamus ut ex id metus pellentesque lacinia non id ligula. Maecenas non tortor lobortis, fringilla velit sed, lobortis leo. </p>
+    </main>
+
+    <style>
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ddd;
+
+      white-space: nowrap;
+      height: 50px;
+      box-sizing: border-box;
+      padding: 10px;
+      box-shadow: 0px 3px 6px rgba(0,0,0,0.16),0px 3px 6px rgba(0,0,0,0.23);      
+    }
+
+    .fixed-nav ul, .fixed-nav li {
+      display:inline;
+    }
+
+    .fixed-nav a {
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 17px 10px;
+      color: #333;
+      font-family: arial;
+    }
+
+    .fixed-nav a:hover {
+      background-color: #000;
+      color: #eee;
+    }
+
+    .fixed-nav ul {
+      padding:0;
+    }
+    .fixed-nav img {
+      vertical-align: middle;
+    }
+    main {margin-top:55px;}
+    </style>
+    <script>
+    (function() {
+      'use strict';
+
+      var nav   = document.querySelector('.fixed-nav');
+      if(!nav) return true;
+
+      var navHeight   = 0,
+          navTop      = 0,
+          scrollCurr  = 0,
+          scrollPrev  = 0,
+          scrollDiff  = 0;
+
+      window.addEventListener('scroll', function() {
+        navHeight = nav.offsetHeight;
+        scrollCurr = window.pageYOffset;
+        scrollDiff = scrollPrev - scrollCurr;
+        navTop = parseInt(window.getComputedStyle(nav).getPropertyValue('top')) + scrollDiff;
+
+        // Scroll to top: fix navbar to top
+        if(scrollCurr <= 0) 
+          nav.style.top = '0px';
+
+        // Scroll up: show navbar
+        else if(scrollDiff > 0) 
+          nav.style.top = (navTop > 0 ? 0 : navTop) + 'px';
+
+        // Scroll down: hide navbar
+        else if(scrollDiff < 0) {
+          nav.style.top = (Math.abs(navTop) > navHeight ? - navHeight : navTop) + 'px';
+        }
+
+        // Note last scroll position
+        scrollPrev = scrollCurr;
+      });
+
+    }());
+    </script> 
   </body>
 </html>
