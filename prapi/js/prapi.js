@@ -56,14 +56,14 @@ function makePayment() {
   //Handle shipping address choice
   paymentRequest.addEventListener("shippingaddresschange", function (changeEvent) {
     changeEvent.updateWith(new Promise(function(resolve, reject) {
-      handleAddressChange(details, request.shippingAddress, resolve, reject);
+      handleAddressChange(details, paymentRequest.shippingAddress, resolve, reject);
     }));
   });
 
   //Handle shipping options choice
   paymentRequest.addEventListener("shippingoptionchange", function (changeEvent) {
     changeEvent.updateWith(new Promise(function(resolve, reject) {
-      handleOptionChange(details, request.shippingOption, resolve, reject);
+      handleOptionChange(details, paymentRequest.shippingOption, resolve, reject);
     }));      
   });
 
