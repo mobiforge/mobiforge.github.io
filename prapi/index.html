@@ -1,0 +1,25 @@
+<!doctype html>
+<html >
+<meta charset="utf8" />
+  <title>Payment Request API Demo</title>
+  <body>
+    <h1>Payment Request API Demo</h1>
+    <div>You should buy the wawesome sauce</div>
+    <div id="order-summary">
+      <span id="product-title">Wawesome sauce</span>
+      <span id="product-price">€1.00</span>
+      <div id="product-description">Full of wawesome</div>
+      <button id="btn-pay" >Buy the Wawesome sauce!</button>
+      <div><strong>Note:</strong> you will not be charged for the wawesome sauce, this is just a demo!</div>
+      <div id="status"></div>
+    </div>
+    <script src="js/prapi.js"></script>
+    <style>
+      #order-summary {margin-top:2em;}
+      #product-title, #product-price {font-size: 1.5em;}
+      #product-price {font-weight: bold;margin-left:20px;}
+      #product-description {font-size:0.9em;margin-bottom: 20px;}
+      #btn-pay {height: 2em;margin-bottom:20px;}
+    </style>
+  </body>
+</html>
