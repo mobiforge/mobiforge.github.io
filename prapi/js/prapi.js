@@ -206,7 +206,6 @@ function calculateTax(items, rate) {
 function calculateTotal(items) {
   var total = 0;
   for(var i=0;i<items.length;i++) {
-    console.log(items[i].amount.value);
     total+=Number(items[i].amount.value);
   }
   return total.toFixed(2);
