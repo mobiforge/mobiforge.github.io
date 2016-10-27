@@ -46,8 +46,8 @@ function makePayment() {
   //Set some options
   var options = {
     requestShipping: true,
-    requestPayerEmail: true,
-    requestPayerPhone: true    
+    requestPayerEmail: false,
+    requestPayerPhone: false    
   }
 
   //Finally we can build the request
