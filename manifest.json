@@ -1,9 +1,11 @@
 {
   "lang": "en",
-  "background_color": "#ffffff",
-  "name": "mobiForge AMP/PWA",
-  "short_name": "mobiForge AMP/PWA",
+  "name": "mobiForge Web examples",
+  "short_name": "mobiForge",
+  "start_url": "/",
   "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color":"#ffffff",
   "icons": [
     {
       "src": "mf-logo-144.png",
