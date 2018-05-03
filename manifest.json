@@ -15,5 +15,6 @@
   ],
   "share_target": {
         "url_template": "share.html?title={title}&text={text}&url={url}"
-  },  
+  },
+  "scope":"/"
 }
