@@ -1,5 +1,4 @@
 {
-  "lang": "en",
   "name": "mobiForge Web examples",
   "short_name": "mobiForge",
   "start_url": "/",
@@ -11,8 +10,12 @@
       "src": "mf-logo-144.png",
       "sizes": "144x144",
       "type": "image/png"
-    }
-  ],
+    },
+    {
+      "src": "mf-logo-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
   "share_target": {
         "url_template": "share.html?title={title}&text={text}&url={url}"
   },
