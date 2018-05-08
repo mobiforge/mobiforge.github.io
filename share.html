@@ -9,9 +9,18 @@
 
   </head>
   <body>    
-    Welcome to mobiForge github hosted pages
-    <script>
-    console.log('hi there');
-    </script>    
+  <h2>mobiForge web share target example page</h2>
+  <p>You shared:</p>
+  <div id="share_title"></div>
+  <div id="share_text"></div>
+  <div id="share_url"></div>
+  <script>
+  window.addEventListener('load', function() {
+    var url = new URL(window.location.toString());
+    document.querySelector('#share_title').innerHTML = 'Title: ' + url.searchParams.get('title');
+    document.querySelector('#share_text').innerHTML  = 'Text: ' + url.searchParams.get('text');
+    document.querySelector('#share_url').innerHTML   = 'URL: ' + url.searchParams.get('url');
+  });
+  </script>  
   </body>
 </html>
