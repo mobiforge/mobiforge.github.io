@@ -14,15 +14,16 @@
   <div id="share_title"></div>
   <div id="share_text"></div>
   <div id="share_url"></div>
-  <div id="ua_string"></div>
+  <div id="page_url"></div>
     
   <script>
   window.addEventListener('load', function() {
     var url = new URL(window.location.toString());
+    
     document.querySelector('#share_title').innerHTML = 'Title: ' + url.searchParams.get('title');
     document.querySelector('#share_text').innerHTML  = 'Text: ' + url.searchParams.get('text');
     document.querySelector('#share_url').innerHTML   = 'URL: ' + url.searchParams.get('url');
-    document.querySelector('#ua_string').innerHTML   = 'UA: ' + navigator.userAgent;
+    document.querySelector('#page_url').innerHTML   = 'Page URL: ' + url;
     console.log('UA:', navigator.userAgent);
   });
   </script>  
