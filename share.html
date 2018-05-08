@@ -20,6 +20,7 @@
     document.querySelector('#share_title').innerHTML = 'Title: ' + url.searchParams.get('title');
     document.querySelector('#share_text').innerHTML  = 'Text: ' + url.searchParams.get('text');
     document.querySelector('#share_url').innerHTML   = 'URL: ' + url.searchParams.get('url');
+    console.log('UA:', navigator.userAgent);
   });
   </script>  
   </body>
