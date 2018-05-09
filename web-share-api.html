@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mobiForge Web share API Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>mobiForge Web Share API demo</h1>
+  <div class="share-container">
+    <button id="btn-share">Share</button>
+  </div>
+<script>
+  window.addEventListener('load', function() {
+    if(!navigator.share) {
+      document.querySelector('.share-container').innerHTML = 'Web Share API not supported in this browser';
+      return;
+    }
+
+    document.getElementById('btn-share').addEventListener('click', function() {
+      navigator.share({
+        title: 'Check out this web share API demo',
+        text: 'Its really cool',
+        url: 'https://mobiforge.github.io/web-share-api.html',
+      });
+    });
+  });
+
+</script>
+</body>
+</html>
